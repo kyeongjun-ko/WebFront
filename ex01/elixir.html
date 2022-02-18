@@ -3,44 +3,143 @@
 <head>
   <title> Bit Lounge 건강음료 </title>
   <meta http-equiv = "Content-Type" content = "text/html"; charset="UTF-8" />
+  <!-- 외부 CSS, link -->
+  <link rel="stylesheet" href="./css/style.css" />
+  
+  <!-- 내부 CSS, 페이지 CSS-->
+  <!-- #를 사용하여서 아이디 선택자 사용 --> 
+  <style>
+    #green {
+      color: #668d2c;
+    }
+    #blue {
+      color:rgb(3, 44, 224);
+    }
+    #red {
+      color: red;
+    }
+    #purple {
+      color:rgb(75, 3, 126);
+    }
+    
+    /* 클래스선택자 . */
+    .beverage {
+      padding:10px; /*내부여백을 10px로 설정*/
+    }
+
+    .beverage.green{
+      background-color:rgba(0, 255, 00, 0.1);
+    }
+
+    .beverage.blue{
+      background-color:rgba(32, 52, 235, 0.342);
+    }
+
+    .beverage.purple{
+      background-color:#f533f5;
+    }
+
+    .beverage.red {
+      background-color:#fa8888;
+    }
+    
+    /* 가상 클래스 
+    hover : 마우스 커서를 올렸을 때
+    visited : 이미 클릭했을 때*/
+    h2:hover{
+      color: black;
+    }
+    h2:active{
+      color: red;
+    }
+    .menu > li:first-child {
+      background-color: rgba(0, 255, 00, 0.1);
+    }
+    .menu > li:nth-child(2) {
+      background-color: rgba(32, 52, 235, 0.342);
+    }
+    .menu > li:nth-child(3) {
+      background-color: #f533f5;
+    }
+    .menu > li:last-child {
+      background-color: #fa8888;
+    }
+    .beverage {
+      border: 3px dotted gray;
+    }
+    /* border-radius 속성*/
+    .seller {
+      border-radius: 90%;
+    }
+  </style>
 </head>
 <body>
-  <h1> 건강 음료</h1>
+  <header>
+    <h1> 독극물 </h1>
+  </header>
+  <nav> <!-- 사이트 네비게이션 : 메뉴 -->
+    <ul class="menu">
+      <li><a href="#green">Green</a></li> <!-- list item : 순서가 없는 목록-->
+      <li><a href="#blue">Blue</a></li><!-- div id로 이동한다.-->
+      <li><a href="#purple">Purple</a></li>
+      <li><a href="#red">Red</a></li>
+    </ul>
+  </nav>
 
-  <!-- 각 공간을 공간점유 태그(div)로 묶어보자-->
-<div>
-  <h2>판매자 : Kevin McCallister (7)</h2>
-    <a href="https://homealone.fandom.com">
-      <img src="./images/homealone.jpg" style="max-width: 30%; height: auto;">
-    </a>
-</div>
+  <!-- 공간을 공간점유 태그(div)로 묶어보자-->
+  <article>
+    <section>
+      <div>
+        <h2>판매자 : Kevin McCallister (7)</h2>
+          <a href="https://homealone.fandom.com">
+            <img class="seller" src="./images/homealone.jpg" style="max-width: 40%; height: auto;">
+          </a>
+      </div>
+    </section>
 
-  <div>
-    <h2>Green Tea Cooler</h2>
-    <!-- alt속성은 image가 없을때 출력 될 대체 텍스트이다.-->
-    <img src="./images/nothing" alt="Green Tea Cooler" title="Green Tea Cooler"/>
-    <p>Combining raspberry juice with lemon grass, 
-      citrus peel and rosehips, 
-      this icy drink will make your mind feel clear and crisp.</p>
-  </div>
+    <section>
+      <div id = "green" class="green beverage" />
+        <h2>Green</h2>
+        <!-- alt속성은 image가 없을때 출력 될 대체 텍스트이다.-->
+        <img src="./images/green.jpg" alt="Green Tea Cooler" title="Green Tea Cooler"/>
+        <p>Combining raspberry juice with lemon grass, 
+          citrus peel and rosehips, 
+          this icy drink will make your mind feel clear and crisp.</p>
+      </div>
+    </section>
 
-  <div>
-    <h2>Raspberry Ice Concentration</h2>
-    <img src="./images/lightblue.jpg" alt="Raspberry Ice Concentration" title="Raspberry Ice Concentration"/>
-    <p> Combining raspberry juice with lemon grass, citrus peel and rosehips, this icy drink will make your mind feel clear and crisp. </p>
-  </div>
+    <section>
+      <div id = "blue" class="blue beverage" />
+        <h2>Rasberry</h2>
+        <img src="./images/lightblue.jpg" alt="Raspberry Ice Concentration" title="Raspberry Ice Concentration"/>
+        <p> Combining raspberry juice with lemon grass, 
+          citrus peel and rosehips, 
+          this icy drink will make your mind feel clear and crisp. </p>
+      </div>
+    </section>
 
-  <div>
-    <h2>Blueberry Ice Concentration</h2>
-    <img src="./images/blue.jpg" alt="Blueberry Ice Concentration" title="Blueberry Ice Concentration"/>
-    <p>Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time.</p>
-  </div>
+    <section>
+      <div id = "purple" class="purple beverage" />
+        <h2>Blueberry</h2>
+        <img src="./images/blue.jpg" alt="Blueberry Ice Concentration" title="Blueberry Ice Concentration"/>
+        <p>Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time.</p>
+      </div>
+    </section>
+    
+    <section>
+      <div id = "red" class="red beverage" />
+        <h2>Cranberry</h2>
+        <img src="./images/red.jpg" alt="Cranberry Antioxidant Blast" title="Cranberry Antioxidant Blast"/>
+        <p> CWake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir.</p>
+      </div>
+    </section>
 
-  <div>
-    <h2>Cranberry Antioxidant Blast</h2>
-    <img src="./images/red.jpg" alt="Cranberry Antioxidant Blast" title="Cranberry Antioxidant Blast"/>
-    <p> CWake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir.</p>
-  </div>
-  <a href="index.html">메인으로 돌아가기</a>
+  </article>
+    <nav>
+      <a href="index.html">메인으로 돌아가기
+        <img src="./images/index_btn.png" width="17" height="17" align="bottom"/>
+      </a>
+    </nav>
+  <footer>&copy;  Bit Lounge, 2022</footer>
 </body>
 </html>

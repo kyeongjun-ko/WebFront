@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>멤버쉽 가입 페이지</title>
+  <style>
+    /* 속성선택자: 특정 속성을 포함하는지 여부*/
+    * [type]{
+      background-color: floralwhite;
+    }
+    input[type="text"] {
+      background-color: rgb(192, 250, 192);
+    }
+    input[type="password"] {
+      background-color: rgba(241, 0, 0, 0.473);
+    }
+    legend{
+      background-color: rgba(104, 103, 103, 0.678);
+    }
+  
+    /* 상태 선택자 */
+    input:enabled{
+      background-color: white;
+    }
+    input:disabled{
+      background-color: gray;
+    }
+    input:focus{
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <h1>멤버쉽 가입</h1>
+  <!-- form의 중요 속성 :
+  1) action : 처리할 페이지
+  2) method 요청방식 (GET, POST) -->
+  <form name="registerForm">
+    <fieldset><!-- 입력 양식의 그룹-->
+      <legend>가입양식</legend>
+      <label for = "userid">아이디</label> <!-- label을 입력했을때 입력창으로 이동하는것과 같다.-->
+      <input type = "text"
+            name = "userid"
+            id = "userid" /><br />
+
+      <!-- id: 페이지 내에서 요소를 제어할 때 사용된다.-->
+      <!-- input 태그의 경우 name 속성은 서버로 전송될 때 파라미터 명으로 사용된다-->
+      <!-- inline 공간 점유방식이기때문에 개행이 일어나지 않는다.-->
+      <label for= "password">비밀번호</label>
+      <input type = "password"
+              name ="password"
+              id = "password" /><br />
+
+      <label for="code">추천코드</label>
+      <input type = "text"
+             name = "code"
+             id="id" disable /><br />
+
+      <!-- radio 코드는 어떤선택지 가될지모르기때문에 for선언 X-->
+      <!--radio : 같은 이름의 데이터 중에서 한개만 선택할 수 있다-->
+      <label>성별</label>
+        <input type="radio"
+              name="sex"
+              value="mail"
+              checked>남성
+        <input type = "radio"
+              name="sex"
+              value="femail"
+              checked> 여성
+        <br />
+        <!-- checkbox : 복수 선택이 가능하고 , 문자열 데이터로 전송된다.
+          같은 이름을 가진 box를 여러개 만들수 있다.서버로 전송될때는 하나로 전동다.-->
+        <label>선호 음료</label>
+        <input type ="checkbox"
+              name="favorite"
+              value="A"> 아메리카노
+        <input type ="checkbox"
+              name="favorite"
+              value="L"> 라떼
+        <input type ="checkbox"
+              name="favorite"
+              value="T"> 차
+        <br />
+        <select name="telecom">
+          <!-- 전송될 테이터-->
+          <option value="S">SKT</option>
+          <option value="K">KT</option>
+          <option value="L">LGT</option>
+          <option value="E">ETC</option>
+        </select>
+      <br />
+        <input type="submit" value="가입하기" />
+        <input type="reset" value ="다시작성" /> 
+      <br />
+    </fieldset>
+  </form>
+</body>
+</html>

@@ -70,7 +70,46 @@
     /* border-radius 속성*/
     .seller {
       border-radius: 90%;
+      max-width: 40%; 
+      height: auto;
     }
+
+    #seller {
+      margin: 10px;
+      padding: 10px;
+      border: 3px grey;
+    }
+    
+      /* display vs visivility */
+      /* display: block; */
+      /* visibility: hidden; */
+      /* background :  bottom / size 100% no-repeat fixed lightgray;
+      max-width: 40%; 
+      height: auto; */
+      /* 백그라운드 인자 순서 image/  position/ size repeat attachment color  */
+
+     .menu > li {
+       list-style: none;
+       float: left;
+       width: 100px; /*요소의 너비*/
+       height: 30px; /*요소의 높이*/
+       text-align: center; /* 텍스트 중앙정렬 */
+       margin-right: 5px;
+       padding: auto;
+     }
+     .menu {
+       margin-bottom: 10px;
+     }
+
+     article{
+       clear: both;
+     }
+    
+    .beverage img {
+      float : left;
+      margin-right: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -89,17 +128,17 @@
   <!-- 공간을 공간점유 태그(div)로 묶어보자-->
   <article>
     <section>
-      <div>
-        <h2>판매자 : Kevin McCallister (7)</h2>
+      <div id="seller">
+        <h2 class="seller">판매자 : Kevin McCallister (7)</h2>
           <a href="https://homealone.fandom.com">
-            <img class="seller" src="./images/homealone.jpg" style="max-width: 40%; height: auto;">
+            <img class="seller" src="./images/homealone.jpg" alt="kevin" />
           </a>
       </div>
     </section>
 
     <section>
       <div id = "green" class="green beverage" />
-        <h2>Green</h2>
+        <h2>Green Tea Cooler</h2>
         <!-- alt속성은 image가 없을때 출력 될 대체 텍스트이다.-->
         <img src="./images/green.jpg" alt="Green Tea Cooler" title="Green Tea Cooler"/>
         <p>Combining raspberry juice with lemon grass, 

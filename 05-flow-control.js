@@ -7,14 +7,12 @@ for (let i=2; i<=9; i++ ){
     console.log(i+" * "+j+" = "+(i*j));
   } console.log("\n")
 }
-
 // 2. * 그리기
 //  *****
 //  ****
 //  ***
 //  **
 //  *
-
 for (let i=5; i>=1; i-- ){
   // console.log("*");
   let stars = "";

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <title>JS Cart</title>
+        <style>
+            #list li {
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Shopping List</h1>
+        </div>
+        <div id="cart-list">
+            <ul id="list">
+                <li>무</li>
+                <li>배추</li>
+                <li>쪽파</li>
+                <li>고춧가루</li>
+            </ul>
+        </div>
+        <div id="cart-input">
+            <input id="item"><button id="btn-add">추가</button>
+        </div>
+        <div id="footer">
+            &copy;Bit Academy
+        </div>
+    </body>
+    <script>
+        // 05. 동적 요소 추가하기
+
+        // addItem 함수만들기
+        function addItem(){
+            let itemInput = document.getElementById("item");
+
+            // 1. 앞 뒤 공백 제거
+            let item = itemInput.value.trim();
+
+            if (item.length > 0) {
+                console.log("추가할 아이템: ", item)
+            
+                // 2. 새로운것을 추가할 위치 li 확인 (부모태그)
+                let container = document.getElementById("list");
+                
+                // 3. 새로 추가할 요소 생성 : createElement
+                let itemNode = document.createElement("li")
+                
+                // 4. JS텍스트 추가하는 역할 innserText 
+                itemNode.innerText = item;
+                
+                // 5. 안쪽에 삭제 버튼 추가하기
+                let toolbar = document.createElement("div");
+                toolbar.style.display = "inline";
+                let delBtn = document.createElement("button");
+                delBtn.innerText = "삭제";
+                delBtn.style.cssFloat = "right";
+
+                toolbar.appendChild(delBtn);
+                itemNode.appendChild(toolbar);
+                container.appendChild(itemNode);
+
+                // 6. 입력상자 초기화, 포커스 맞추기
+                itemInput.value = "";
+                itemInput.focus();
+
+                
+                // 7. 삭제 기능 추가하기 (이벤트추가)
+                delBtn.addEventListener("click", function(event){
+                    console.log("이벤트 발생 객체: ", event.target);
+                    // 8. 삭제할 노드
+                    let removeItem = event.target
+                    .parentNode.parentNode;
+                    console.log("삭제 할 노드: ", removeItem);
+
+                    // removeItem의 부모 찾아가기 
+                    let parent = removeItem.parentNode ; // 부모
+                    parent.removeChild(removeItem); // ul을 말한다.
+                });
+                
+
+            } 
+        }
+
+        // onload(페이지 로드가 끝났을때) -> 초기화
+        window.addEventListener("load",function(event){
+            //쇼핑 목록 초기화
+            let cartItems =
+                    document.querySelectorAll("#list > li");
+                    console.log("items:", cartItems);
+                    for ( let i = 0; i< cartItems.length; i++)
+                }
+            
+            // btn-add 버튼에 이벤트 리스터 부착
+            document.getElementById("btn-add")
+            .addEventListener("click", addItem);
+
+    </script>
+</html>
